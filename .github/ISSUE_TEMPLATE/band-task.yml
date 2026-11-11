@@ -1,0 +1,67 @@
+name: Band task
+ description: Track one piece of work for a song release.
+ title: "[Area] Short task name"
+ labels: []
+ body:
+   - type: markdown
+     attributes:
+       value: |
+         Create one issue per task. Assign one accountable band member and add this issue to the release Project.
+   - type: input
+     id: owner
+     attributes:
+       label: Accountable owner
+       description: Name the one person responsible for getting this done. Assign them to the issue after creating it.
+       placeholder: Band member's name
+     validations:
+       required: true
+   - type: dropdown
+     id: area
+     attributes:
+       label: Work area
+       options:
+         - Writing / arrangement
+         - Rehearsal
+         - Recording
+         - Editing / mixing / mastering
+         - Artwork / visuals
+         - Distribution / metadata
+         - Promotion / press
+         - Release day
+         - Other
+     validations:
+       required: true
+   - type: textarea
+     id: outcome
+     attributes:
+       label: What needs to be done?
+       description: Describe the action and what a finished result looks like.
+       placeholder: |
+         Task:
+         Definition of done:
+     validations:
+       required: true
+   - type: input
+     id: due-date
+     attributes:
+       label: Due date
+       description: Use YYYY-MM-DD. Leave blank if not scheduled yet.
+       placeholder: YYYY-MM-DD
+     validations:
+       required: false
+   - type: textarea
+     id: dependencies
+     attributes:
+       label: Dependencies / blockers
+       description: Link prerequisite issues or note decisions, files, or help needed.
+       placeholder: None, or describe what must happen first.
+     validations:
+       required: false
+   - type: textarea
+     id: references
+     attributes:
+       label: Reference links
+       description: Link relevant files or external resources. Do not include credentials.
+       placeholder: Links
+     validations:
+       required: false
